@@ -47,6 +47,10 @@ function JoiCepValidation(value: string, helpers: Joi.CustomHelpers<string>) {
   return value;
 }
 
+export const JoiValidateCep = Joi.object({
+  cep: Joi.string().regex(/^([\d]{8}|[\d]{5}-[\d]{3})$/).required()
+});
+
 function joiMobilePhoneValidation(value: string, helpers: Joi.CustomHelpers<string>) {
   if (!value) return value;
 
